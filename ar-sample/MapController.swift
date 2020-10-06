@@ -147,12 +147,13 @@ class MapController: UIViewController {
                 for (index, stepCoordinate) in polyline.enumerated() {
                     let startStep = stepCoordinate
                     let nextStep = polyline[index + 1]
-                    let bearing = self.getBearingBetweenTwoPoints1(point1: startStep, point2: nextStep)
+                    var bearing = self.getBearingBetweenTwoPoints1(point1: startStep, point2: nextStep)
                     var previousCoordinate = startStep
                     if index != polyline.count - 1 {
                         for i in stride(from: 0, to: distance, by: metersPerNode) {
                             // Use Turf to find the coordinate of each incremented distance along the polyline
                             let nextCoordinate = self.locationWithBearing(bearingRadians: bearing, distanceMeters: i, origin: previousCoordinate)
+                            bearing = self.getBearingBetweenTwoPoints1(point1: previousCoordinate, point2: nextCoordinate)
                             previousCoordinate = nextCoordinate
                             if CLLocation(latitude: nextStep.latitude, longitude: nextStep.longitude).distance(from: CLLocation(latitude: nextCoordinate.latitude, longitude: nextCoordinate.longitude)) > metersPerNode {
                                 let interpolatedStepLocation = CLLocation(latitude: nextCoordinate.latitude, longitude: nextCoordinate.longitude)
