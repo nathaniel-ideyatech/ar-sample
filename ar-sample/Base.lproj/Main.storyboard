@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDF-ZT-hHX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ar_sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </arscnView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
@@ -32,6 +35,104 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="97"/>
+        </scene>
+        <!--Map Controller-->
+        <scene sceneID="Yak-JC-2VD">
+            <objects>
+                <viewController id="IDF-ZT-hHX" customClass="MapController" customModule="ar_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Elq-UG-1ga"/>
+                        <viewControllerLayoutGuide type="bottom" id="sSr-vb-pEa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PhU-qN-17q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H23-FX-3tw" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkd-0c-A92">
+                                        <rect key="frame" x="0.0" y="587" width="414" height="309"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-j0-CgH" customClass="MGLMapView">
+                                                <rect key="frame" x="8" y="50" width="398" height="213"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crosshairs" translatesAutoresizingMaskIntoConstraints="NO" id="pvS-t5-hNq">
+                                                        <rect key="frame" x="174" y="81.5" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="jll-Ua-8Aq"/>
+                                                            <constraint firstAttribute="height" constant="50" id="rHe-cP-cgK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstItem="pvS-t5-hNq" firstAttribute="centerY" secondItem="dFv-j0-CgH" secondAttribute="centerY" id="Wmi-cv-ve7"/>
+                                                    <constraint firstItem="pvS-t5-hNq" firstAttribute="centerX" secondItem="dFv-j0-CgH" secondAttribute="centerX" id="hKR-e5-frg"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Dzb-vm-VDX" appends="YES" id="4Qd-lt-o8f"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylP-vU-nUs">
+                                                <rect key="frame" x="107" y="11" width="200" height="26.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="SNd-xW-heh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dFv-j0-CgH" secondAttribute="trailing" id="57d-cW-DsN"/>
+                                            <constraint firstItem="ylP-vU-nUs" firstAttribute="top" secondItem="qkd-0c-A92" secondAttribute="top" constant="11" id="OVy-nH-uaN"/>
+                                            <constraint firstItem="dFv-j0-CgH" firstAttribute="leading" secondItem="qkd-0c-A92" secondAttribute="leadingMargin" id="QTK-6G-lmq"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="dFv-j0-CgH" secondAttribute="bottom" constant="4" id="aNr-su-DHm"/>
+                                            <constraint firstItem="ylP-vU-nUs" firstAttribute="centerX" secondItem="qkd-0c-A92" secondAttribute="centerX" id="dKs-u3-sZ5"/>
+                                            <constraint firstAttribute="height" constant="309" id="rAt-8y-ksN"/>
+                                            <constraint firstItem="dFv-j0-CgH" firstAttribute="top" secondItem="qkd-0c-A92" secondAttribute="topMargin" constant="42" id="s4z-mm-UoS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qkd-0c-A92" secondAttribute="bottom" id="IIc-f4-F7D"/>
+                                    <constraint firstItem="qkd-0c-A92" firstAttribute="leading" secondItem="H23-FX-3tw" secondAttribute="leading" id="KXD-4o-zef"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkd-0c-A92" secondAttribute="trailing" id="XOJ-7B-X3z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H23-FX-3tw" firstAttribute="top" secondItem="PhU-qN-17q" secondAttribute="top" id="746-xd-yEO"/>
+                            <constraint firstAttribute="trailing" secondItem="H23-FX-3tw" secondAttribute="trailing" id="Yi5-2z-86b"/>
+                            <constraint firstItem="H23-FX-3tw" firstAttribute="leading" secondItem="PhU-qN-17q" secondAttribute="leading" id="yQ3-tc-kkc"/>
+                            <constraint firstAttribute="bottom" secondItem="H23-FX-3tw" secondAttribute="bottom" id="zLN-U1-Pdv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ddx-f9-Nk9"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraStateInfoLabel" destination="ylP-vU-nUs" id="LCB-1v-YDZ"/>
+                        <outlet property="controlsContainerView" destination="qkd-0c-A92" id="gt7-aJ-aLL"/>
+                        <outlet property="mapView" destination="dFv-j0-CgH" id="i0J-GG-gAw"/>
+                        <outlet property="sceneView" destination="H23-FX-3tw" id="308-nM-kQX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZpF-3c-ZVM" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Dzb-vm-VDX">
+                    <connections>
+                        <action selector="didLongPress:" destination="IDF-ZT-hHX" id="QxB-9g-Ugt"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-826" y="80"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crosshairs" width="640" height="638"/>
+    </resources>
 </document>

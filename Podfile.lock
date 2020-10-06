@@ -1,0 +1,24 @@
+PODS:
+  - Mapbox-iOS-SDK (5.5.1)
+  - MapboxDirections.swift (0.30.0):
+    - Polyline (~> 4.2)
+  - Polyline (4.2.1)
+
+DEPENDENCIES:
+  - Mapbox-iOS-SDK (~> 5.5.0)
+  - MapboxDirections.swift (~> 0.30.0)
+
+SPEC REPOS:
+  trunk:
+    - Mapbox-iOS-SDK
+    - MapboxDirections.swift
+    - Polyline
+
+SPEC CHECKSUMS:
+  Mapbox-iOS-SDK: 051d78eb8beb4bd0601212a18ea3ba8608bae32f
+  MapboxDirections.swift: 6be6f756176b2c16f308093cc4724fa82ce33b12
+  Polyline: 0e9890790292741c8186201a536b6bb6a78d02dd
+
+PODFILE CHECKSUM: 6a9c873896baa34f8c15b2217a7bc223a8098921
+
+COCOAPODS: 1.9.3

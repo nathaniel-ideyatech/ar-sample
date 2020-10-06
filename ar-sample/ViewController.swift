@@ -225,7 +225,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let bearing = bearingBetweenLocations(userLocation, driverLocation)
         let rotationMatrix = rotateAroundY(matrix_identity_float4x4, Float(bearing))
 
-        let position = simd_float4(x: 0.0, y: 0.0, z: Float(-distance), w: 0.0)
+        let position = vector_float4(0.0, 0.0, Float(-distance), 0.0)
         let translationMatrix = getTranslationMatrix(matrix_identity_float4x4, position)
 
         let transformMatrix = simd_mul(rotationMatrix, translationMatrix)
